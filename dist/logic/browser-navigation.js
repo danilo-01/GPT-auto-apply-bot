@@ -20,9 +20,10 @@ function createBrowserInstance() {
     return __awaiter(this, void 0, void 0, function* () {
         // Launch the browser in maximized mode
         const browser = yield puppeteer_1.default.launch({
+            executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
             headless: false,
             defaultViewport: null,
-            args: ["--start-maximized"], // Start the browser maximized
+            args: ["--start-maximized"],
         });
         // Get the first page and set its viewport to match the browser window size
         const [page] = yield browser.pages();

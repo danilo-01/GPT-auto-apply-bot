@@ -21,9 +21,11 @@ app.get("/auto-apply", (req, res) => __awaiter(void 0, void 0, void 0, function*
     try {
         const browser = yield (0, browser_navigation_1.createBrowserInstance)();
         const page = yield browser.newPage();
-        yield (0, browser_navigation_1.loginToLinkedIn)(page);
-        yield (0, browser_navigation_1.navigateToJobsPage)(page);
+        // await loginToLinkedIn(page);
+        // await navigateToJobsPage(page);
         yield (0, job_search_logic_1.searchJobs)(page);
+        const { jobs, nextPageLink } = yield (0, job_search_logic_1.getAllJobs)(page);
+        console.log(jobs, nextPageLink);
         // Create browser instance
         // Log into linkedin
         // Navigate to jobs page

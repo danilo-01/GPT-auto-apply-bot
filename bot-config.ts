@@ -19,15 +19,69 @@ export const botConfig: BotConfigInterface = {
 
   // Job Search Configuration
   jobSearch: {
-    keywords: ["Software Engineer", "Data Scientist"], // Job titles or keywords you're interested in
-    location: "San Francisco, CA", // Preferred job location
-    jobType: ["Full-time"], // 'Part-time', 'Contract', etc.
-    experienceLevel: ["Mid-Level"], // 'Entry-Level', 'Senior-Level', etc.
-    companySize: ["51-200 employees"], // Preferred company size
-    industries: ["Tech", "Finance"], // Preferred industries
-    jobFunction: [],
-    datePosted: [],
-    remoteOptions: [],
+    keywords: ["Software Engineer"],
+    location: "Austin",
+    jobType: {
+      fullTime: true,
+      partTime: true,
+      contract: true,
+      temporary: false,
+      internship: false,
+      volunteer: false,
+    },
+    companySize: {
+      "1-10 employees": true,
+      "11-50 employees": true,
+      "51-200 employees": true,
+      "201-500 employees": true,
+      "501-1000 employees": true,
+      "1001-5000 employees": true,
+      "5001-10,000 employees": true,
+      "10,001+ employees": true,
+    },
+    industries: {
+      tech: true,
+      finance: true,
+      healthcare: false,
+      education: false,
+      manufacturing: false,
+      retail: false,
+      realEstate: false,
+      entertainment: false,
+      government: false,
+      nonProfit: false,
+    },
+    jobFunction: {
+      engineering: false,
+      sales: false,
+      marketing: false,
+      IT: false,
+      humanResources: false,
+      finance: false,
+      productManagement: false,
+      consulting: false,
+      administrative: false,
+      arts: false,
+    },
+    datePosted: {
+      past24Hours: false,
+      pastWeek: false,
+      pastMonth: false,
+      anyTime: false,
+    },
+    remoteOptions: {
+      onSite: false,
+      remote: true,
+      hybrid: false,
+    },
+    experienceLevel: {
+      internship: false,
+      entryLevel: false,
+      associate: false,
+      midSeniorLevel: false,
+      director: false,
+      executive: false,
+    },
   },
 
   // Job Matching Configuration

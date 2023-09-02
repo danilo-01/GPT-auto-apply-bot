@@ -7,7 +7,7 @@ import {
   loginToLinkedIn,
   navigateToJobsPage,
 } from "./logic/browser-navigation";
-import { searchJobs } from "./logic/job-search-logic";
+import { getAllJobs, searchJobs } from "./logic/job-search-logic";
 
 const app = express();
 const PORT = 3000;
@@ -16,9 +16,13 @@ app.get("/auto-apply", async (req: Request, res: Response) => {
   try {
     const browser: Browser = await createBrowserInstance();
     const page: Page = await browser.newPage();
-    await loginToLinkedIn(page);
-    await navigateToJobsPage(page);
+    // await loginToLinkedIn(page);
+    // await navigateToJobsPage(page);
     await searchJobs(page);
+
+    const { jobs, nextPageLink } = await getAllJobs(page);
+
+    console.log(jobs, nextPageLink);
     // Create browser instance
     // Log into linkedin
     // Navigate to jobs page

@@ -5,9 +5,11 @@ import { botConfig } from "../bot-config";
 export async function createBrowserInstance(): Promise<Browser> {
   // Launch the browser in maximized mode
   const browser = await puppeteer.launch({
+    executablePath:
+      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
     headless: false,
-    defaultViewport: null, // Important: set the defaultViewport to null
-    args: ["--start-maximized"], // Start the browser maximized
+    defaultViewport: null,
+    args: ["--start-maximized"],
   });
 
   // Get the first page and set its viewport to match the browser window size

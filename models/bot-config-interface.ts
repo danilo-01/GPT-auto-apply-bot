@@ -18,58 +18,75 @@ interface BrowserConfig {
 interface JobSearchConfig {
   keywords: string[];
   location: string;
-  jobType: (
-    | "Full-time"
-    | "Part-time"
-    | "Contract"
-    | "Temporary"
-    | "Internship"
-    | "Volunteer"
-  )[];
-  experienceLevel: (
-    | "Entry-Level"
-    | "Mid-Level"
-    | "Senior-Level"
-    | "Director"
-    | "Executive"
-  )[];
-  companySize: (
-    | "1-10 employees"
-    | "11-50 employees"
-    | "51-200 employees"
-    | "201-500 employees"
-    | "501-1000 employees"
-    | "1001-5000 employees"
-    | "5001-10,000 employees"
-    | "10,001+ employees"
-  )[];
-  industries: (
-    | string
-    | "Tech"
-    | "Finance"
-    | "Healthcare"
-    | "Education"
-    | "Manufacturing"
-    | "Retail"
-    | "Real Estate"
-    | "Entertainment"
-    | "Government"
-    | "Non-Profit"
-  )[]; // Expanded with more specific industries
-  jobFunction: (
-    | "Engineering"
-    | "Sales"
-    | "Marketing"
-    | "IT"
-    | "Human Resources"
-    | "Finance"
-    | "Product Management"
-    | "Consulting"
-    | "Administrative"
-    | "Arts"
-  )[]; // Job functions as seen on LinkedIn
-  datePosted: ("Past 24 hours" | "Past Week" | "Past Month" | "Any Time")[]; // Filter based on when the job was posted
-  remoteOptions: ("Remote" | "On-Site" | "Hybrid")[]; // Job's remote work options
+
+  jobType: {
+    fullTime: boolean;
+    partTime: boolean;
+    contract: boolean;
+    temporary: boolean;
+    internship: boolean;
+    volunteer: boolean;
+  };
+
+  companySize: {
+    "1-10 employees": boolean;
+    "11-50 employees": boolean;
+    "51-200 employees": boolean;
+    "201-500 employees": boolean;
+    "501-1000 employees": boolean;
+    "1001-5000 employees": boolean;
+    "5001-10,000 employees": boolean;
+    "10,001+ employees": boolean;
+  };
+
+  industries: {
+    tech: boolean;
+    finance: boolean;
+    healthcare: boolean;
+    education: boolean;
+    manufacturing: boolean;
+    retail: boolean;
+    realEstate: boolean;
+    entertainment: boolean;
+    government: boolean;
+    nonProfit: boolean;
+    [key: string]: boolean; // This allows for additional industries as strings
+  };
+
+  jobFunction: {
+    engineering: boolean;
+    sales: boolean;
+    marketing: boolean;
+    IT: boolean;
+    humanResources: boolean;
+    finance: boolean;
+    productManagement: boolean;
+    consulting: boolean;
+    administrative: boolean;
+    arts: boolean;
+  };
+
+  datePosted: {
+    past24Hours: boolean;
+    pastWeek: boolean;
+    pastMonth: boolean;
+    anyTime: boolean;
+  };
+
+  remoteOptions: {
+    onSite: boolean;
+    remote: boolean;
+    hybrid: boolean;
+  };
+
+  experienceLevel: {
+    internship: boolean;
+    entryLevel: boolean;
+    associate: boolean;
+    midSeniorLevel: boolean;
+    director: boolean;
+    executive: boolean;
+  };
 }
 
 interface JobMatchConfig {

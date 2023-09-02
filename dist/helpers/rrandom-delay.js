@@ -13,8 +13,8 @@ exports.randomDelay = void 0;
 // Helper function to introduce a random delay between 0.2 to 1 second
 function randomDelay() {
     return __awaiter(this, void 0, void 0, function* () {
-        const min = 200; // 0.2 seconds
-        const max = 1000; // 1 second
+        const min = 500; // 0.5 seconds
+        const max = 4000; // 4 seconds
         const delay = Math.random() * (max - min) + min;
         return new Promise((resolve) => setTimeout(resolve, delay));
     });
