@@ -1,0 +1,3 @@
+# auto-apply-bot
+
+This bot automates the process of searching for jobs on LinkedIn based on user-defined criteria. It logs into LinkedIn, navigates to the job search page, and inputs specific keywords, job types, experience levels, and other filters. The bot then scrapes job listings from the search results, paginating through results if necessary. It's designed to mimic human-like interactions with random delays between actions to avoid detection. Additionally, the bot uses configuration files for user credentials, browser settings, and job search parameters, ensuring flexibility and security.
